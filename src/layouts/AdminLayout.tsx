@@ -128,9 +128,9 @@ export default function AdminLayout() {
   const active = currentItem(pathname)
   const isProfile = /^\/admin\/students\/.+/.test(pathname)
 
-  const renderSidebar = (mini: boolean) => (
+  const renderSidebar = (mini: boolean, mobile = false) => (
     <div className="flex h-full flex-col bg-gradient-to-b from-slate-900 via-slate-900 to-indigo-950 text-slate-300">
-      <div className={`flex items-center gap-3 border-b border-white/10 py-5 ${mini ? 'justify-center px-2' : 'px-5'}`}>
+      <div className={`flex items-center gap-3 border-b border-white/10 py-5 ${mini ? 'justify-center px-2' : mobile ? 'pl-12 pr-5' : 'px-5'}`}>
         <Link to="/admin" className="flex min-w-0 items-center gap-3">
           <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-violet-600 text-white shadow-lg shadow-indigo-900/50">
             <GraduationCap className="h-6 w-6" />
@@ -281,7 +281,7 @@ export default function AdminLayout() {
             mobileOpen ? 'translate-x-0' : 'translate-x-full'
           }`}
         >
-          {renderSidebar(false)}
+          {renderSidebar(false, true)}
           <button
             onClick={() => setMobileOpen(false)}
             aria-label="إغلاق القائمة"
