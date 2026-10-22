@@ -30,3 +30,8 @@ body {
     box-shadow: none !important;
   }
 }
+
+.sidebar-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(255 255 255 / 0.15) transparent;
+}
